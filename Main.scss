@@ -1,10 +1,12 @@
 $primary: #1d1d1d;
-$secondary: #484848;
+$secondary: #9d9999;
 $textColor: white;
 
 body {
   margin: 0px;
-  background: repeating-linear-gradient($secondary, $primary);
+  background: linear-gradient(-45deg, #000000, #bebebe, #6b6969, #434343);
+  background-size: 400% 400%;
+  animation: gradient 20s infinite;
   height: 100vh;
   font-family: "Yu Gothic UI Semibold";
 }
@@ -66,21 +68,50 @@ nav {
     }
 
     a:hover {
-      color: #605f5f;
+      border: solid 2px $textColor;
+      background-color: $secondary;
+      color: #000000;
     }
   }
 }
 
 .container {
-  background: rgba($primary, 0.7);
+  background: rgba($primary, 0.8);
   color: $textColor;
   margin-left: 15%;
   margin-right: 15%;
   margin-top: 50px;
   padding: 50px;
   width: 60%;
-  border-radius: 20px;
   font-size: 25px;
+  box-shadow: 8px 6px $secondary;
+}
+
+.flexContainer {
+  display: flex;
+  align-items: center;
+
+  .container2 {
+    background: rgba($primary, 0.8);
+    color: $textColor;
+    margin-left: 15%;
+    margin-top: 50px;
+    padding: 50px;
+    width: 15%;
+    font-size: 25px;
+    box-shadow: 8px 6px $secondary;
+  }
+
+  .container3 {
+    background: rgba($primary, 0.8);
+    color: $textColor;
+    margin-left: 25%;
+    margin-top: 50px;
+    padding: 50px;
+    width: 15%;
+    font-size: 25px;
+    box-shadow: 8px 6px $secondary;
+  }
 }
 
 h1 {
@@ -92,3 +123,16 @@ i {
   font-size: 70px;
 }
 
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
